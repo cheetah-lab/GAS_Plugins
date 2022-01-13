@@ -1,7 +1,7 @@
 {
   "plugin" :{
-    "name" : "Windows提权辅助",
-    "author" : "猎豹",
+    "name" : "提权辅助",
+    "author" : "猎豹安全实验室",
     "desc": "Windows提权辅助工具",
     "version" : "0.1.0",
     "icons" : "src/tiquan.png",
