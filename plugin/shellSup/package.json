@@ -1,0 +1,21 @@
+{
+  "plugin" :{
+    "name" : "shell辅助",
+    "author" : "猎豹",
+    "desc": "shell 辅助程序插件 shell辅助程序插件",
+    "version" : "0.1.0",
+    "icons" : "src/shell.png",
+    "main_program" : "src/index.html",
+    "content" : {
+     "customize_box": {
+
+     },
+     "specific_style" : {
+
+     }
+    },
+    "scripts": {},
+		"devDependencies": {},
+		"dependencies": {}
+	}
+}
