@@ -1,7 +1,7 @@
 {
   "plugin" :{
     "name" : "指纹识别",
-    "author" : "猎豹",
+    "author" : "猎豹安全实验室",
     "desc": "指纹识别工具",
     "version" : "0.1.0",
     "icons" : "src/zhiwen.png",
