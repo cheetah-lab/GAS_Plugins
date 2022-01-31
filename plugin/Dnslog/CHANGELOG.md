@@ -3,7 +3,7 @@
 ## [Unreleased]
 
 
-## [version-0.1.0] - 2021-11-24
+## [version-0.1.0] - 2022-1-31
 ### Added
-- shell回连辅助命令自动生成
+- DNSlog 插件初次编写
 
