@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html class="x-admin-sm">
+
+<head>
+    <meta charset="UTF-8">
+    <title>dnslog</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi"/>
+    <link rel="stylesheet" href="./css/font.css">
+    <link rel="stylesheet" href="./css/xadmin.css">
+    <script src="./lib/layui/layui.js" charset="utf-8"></script>
+    <script src="./js/jquery.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./js/xadmin.js"></script>
+
+</head>
+
+<body style="background-color: #ffffff">
+<!--<script type="text/javascript" src="data.json">-->
+
+</script>
+<div class="layui-card">
+    <div class="layui-card-header">
+        <!--        onclick="Ajax();"-->
+        <button class="layui-btn layui-btn-danger" id="update">
+            获取域名
+        </button>
+    </div>
+    <div class="layui-card-body">
+        <table class="layui-table layui-form">
+            <thead>
+            <tr>
+                <td>当前域名信息</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr id="disp">
+                <td id='test1'></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="layui-card-header" id="data1">
+        <button class="layui-btn layui-btn-danger" id="view">
+            更新数据
+        </button>
+    </div>
+    <div class="layui-card-body ">
+        <table class="layui-table layui-form">
+            <thead>
+            <tr>
+                <th>域名</th>
+                <th>IP</th>
+                <th>时间</th>
+            </tr>
+            </thead>
+            <tbody id="disd">
+            <tr id='test2'></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+<script>
+    $("#update").click(function () {
+        var parent = document.getElementById("disp");
+        var child = document.getElementById("test1");
+        parent.removeChild(child);
+        $.ajax({
+            type: 'get',
+            url: 'http://www.dnslog.cn/getdomain.php',
+        }).then(function (result) {
+            const strTemp = result.toString();
+            $("#disp").append("<td id='test1'>" + strTemp + "</td>");
+
+        })
+
+    });
+    $("#view").click(function () {
+        const parent = document.getElementById("disd");
+        const child = document.getElementById("test2");
+        parent.removeChild(child);
+        $.ajax({
+            type: 'get',
+            url: 'http://www.dnslog.cn/getrecords.php',
+        }).then(function (result) {
+            for (var i = 0; i < result.length; i++) {
+                $("#disd").append("<tr id='test2'>" + "<td>" + result[i][0] + "</td>" + "<td>" + result[i][1] + "</td>" + "<td>" + result[i][2] + "</td>" + "</tr>");
+            }
+        })
+
+    });
+</script>
+</body>
+
+</html>
