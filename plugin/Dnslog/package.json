@@ -1,6 +1,6 @@
 {
   "plugin" :{
-    "name" : "DNSlog",
+    "name" : "Dnslog",
     "author" : "猎豹安全实验室",
     "desc": "DNSLOG辅助，可在线显示调试数据",
     "version" : "0.1.0",
